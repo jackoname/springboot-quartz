@@ -1,0 +1,52 @@
+server:
+  port: 8992
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  application:
+    name: springboot-quartz
+  datasource:
+   url: jdbc:mysql://localhost:3306/tkdb?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+   username: root
+   password: 123456
+   driver-class-name: com.mysql.cj.jdbc.Driver
+  quartz:
+    job-store-type: jdbc
+    properties:
+      org:
+        quartz:
+          dataSource:
+            quartzDataSource:
+              driver: com.mysql.cj.jdbc.Driver
+              URL: jdbc:mysql://localhost:3306/sdj
+              user: root
+              password: 123456
+          scheduler:
+            instanceName: clusteredScheduler
+            instanceId: AUTO
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: QRTZ_
+            isClustered: false
+            dataSource: quartzDataSource
+            clusterCheckinInterval: 10000
+            useProperties: true
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-underline: false # ????????????
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #??sql??
+    map-underscore-to-camel-case: true  # ????????????
+
+
+
