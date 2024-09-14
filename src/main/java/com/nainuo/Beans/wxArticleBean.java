@@ -13,14 +13,18 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
-@TableName("tci_sync_config")
-public class syncConfigBean {
+@TableName("tbi_wx_article")
+public class wxArticleBean {
     @TableId(value = "id", type = IdType.AUTO)
     int id;
-    int appType;
-    int minute;
-    int hour;
-    int second;
+    int type;
+    Date createTime;
+    String content;
+    String remark;
+    String appId;
+    String openId;
 
 }

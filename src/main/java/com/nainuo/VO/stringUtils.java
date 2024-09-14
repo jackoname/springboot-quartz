@@ -23,7 +23,7 @@ public class stringUtils {
         Map<String,String> parms= new HashMap<>();
         if(input.contains("#&#")){
         String[] mapstr = input.split("#&#");
-        System.out.println(mapstr[0]+"----  ****----"+mapstr[1]);
+      //  System.out.println(mapstr[0]+"----  ****----"+mapstr[1]);
 
         for (String s : mapstr) {
             String[] split = s.split("#-#");

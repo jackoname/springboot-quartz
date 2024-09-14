@@ -60,4 +60,24 @@ public class DateTimeToStrUtil {
         return goalDate;
     }
 
+    public static Long getTimeDifference(Date date1) {
+        // 定义时间格式
+     //   Date date1 = new Date(System.currentTimeMillis() - 1000 * 60 * 60 * 24 * 2); // 两天前
+        Date date2 = new Date(); // 当前时间
+
+        // 计算时间差（毫秒）
+        long difference = date2.getTime() - date1.getTime();
+
+        // 转换时间差为天、小时、分钟和秒
+        long days = difference / (1000 * 60 * 60 * 24);
+        long hours = (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+        long minutes = (difference % (1000 * 60 * 60)) / (1000 * 60);
+        long seconds = (difference % (1000 * 60)) / 1000;
+
+        // 输出结果
+      //  System.out.println("Difference: " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
+
+        return days;
+    }
+
 }

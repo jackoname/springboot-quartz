@@ -20,7 +20,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-@TableName(value = "order_info")
+@TableName(value = "tbi_order_info")
 public class orderBean {
     @TableId(value = "order_id", type = IdType.AUTO)
     Long orderId;//自增id
@@ -29,6 +29,7 @@ public class orderBean {
     String openId;//微信id
     String signOid;//加密后的微信id
     String orderNo;//订单号
+    String orderNoSon;//子订单号
     String goodId;//商品id
     String goodsSign;//加密商品id
     String title;//商品标题
@@ -38,7 +39,7 @@ public class orderBean {
     BigDecimal UserCommission;//用户佣金
     BigDecimal myCommission;//我的佣金
     BigDecimal CommissionRate;//总佣金比例
-
+    BigDecimal UserCommissionRate;//用户佣金
     int orderStatus;//订单状态
     String orderStatusDec;//订单状态描述
     Date creatTime;//创建时间
@@ -48,7 +49,7 @@ public class orderBean {
     String appId;//gzhid
     String appName;//gzhid
     String pId;
-
+    int orderStatusSys;
     Date updateTime;//更新时间
     Long updateTimeSign;//更新时间戳
     int appType;
@@ -56,5 +57,9 @@ public class orderBean {
     String endTime;//查询结束
     Date complateTime;//订单支付时间
     Long complateTimeSign;//订单支付时间时间戳
+    String orderParentNo;
+    int skuNum;
+    String uuid;
+
 }
 

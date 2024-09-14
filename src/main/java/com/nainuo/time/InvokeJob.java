@@ -30,7 +30,7 @@ public class InvokeJob implements Job {
         JobDataMap jobDataMap = context.getJobDetail()
                 .getJobDataMap();
         JobDetail jobDetail = context.getJobDetail();
-        System.out.println("jobDetail中有什么: " + JSON.toJSONString(jobDetail));
+                System.out.println("jobDetail中有什么: " + JSON.toJSONString(jobDetail));
 
         Map<String,Object> map = JSON.parseObject(String.valueOf(jobDataMap.get("info")),new TypeReference<Map<String,Object>>(){}.getType());
         logger.info(JSON.toJSONString(jobDataMap));

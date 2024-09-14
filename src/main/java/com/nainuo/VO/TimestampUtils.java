@@ -63,6 +63,9 @@ public class TimestampUtils {
     public static long convertToDateTimestamp(Date date) {
         return date.getTime()/1000;
     }
+    public static long convertToDateTimestamp1(Date date) {
+        return date.getTime();
+    }
 
     /**
      * 将LocalDateTime对象转换为时间戳

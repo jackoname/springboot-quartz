@@ -94,7 +94,7 @@ public class pddJob implements Job {
                     String sid = JSON.parseObject(uidsid).getString("sid");
                     int st = rj.getInteger("order_status");
                    // System.out.println(sid);
-                    if (uuid.equals(sid)&&st!=4) {
+                    if (uuid.equals(sid)) {
                    //     System.out.println(uuid);
                         userSearchGoodsBean ub = userSearchGoodsBeans.get(i);
                         BigDecimal rate = BigDecimal.valueOf(ub.getUserCommissionRate()*ub.getCommissionRate());
@@ -134,7 +134,7 @@ public class pddJob implements Job {
                         orderBean.setUpdateTimeSign(TimestampUtils.convertToDateTimestamp(orderBean.getUpdateTime()));
                         //orderBean.setUserCommissionRate();
                         userSearchGoodsBean usb = userSearchGoodsBeans.get(i);
-                        //订单状态：0-已支付；1-已成团；2-确认收货；3-审核成功；4-审核失败（不可提现）；5-已经结算 ;10-已处罚
+                        //订单状态：0-已支付；1-已成团；2-确认收货；3- ；4-审核失败（不可提现）；5-已经结算 ;10-已处罚
                         usb.setOrderBindFlag("1");
                         usb.setUpdateTime(new Date());
                         usb.setUpdateTimeSign(TimestampUtils.convertToDateTimestamp(usb.getUpdateTime()));

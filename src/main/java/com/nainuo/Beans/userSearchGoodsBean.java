@@ -19,13 +19,15 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-@TableName("chat_and_recommendation")
-
+@TableName("tbi_chat_and_recommendation")
 public class userSearchGoodsBean {
     @TableId(value = "sg_id", type = IdType.AUTO)
     Long sgId;//主键
     @TableField(value = "u_id")
     Long uId;//用户主键
+    String tbId;
+    String statusDec;
+    String tbpId;
     String openId;//微信id
     String signOid;//加密后的微信id
     String fromUserMsg;//用户发送的信息
@@ -53,10 +55,11 @@ public class userSearchGoodsBean {
     int isUse;//链接是否在有效期内
     int isDel;//是否逻辑删除
     int comparePricePdd;// 拼多多判定比价
-
+    int isLogicDel;
     String uuid;
     Date updateTime;//更新时间
     Long updateTimeSign;//更新时间戳
+    int status;
 
 }
 
